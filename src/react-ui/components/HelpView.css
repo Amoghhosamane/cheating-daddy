@@ -1,0 +1,84 @@
+.help-view {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.help-card {
+    padding: var(--spacing-xl);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: var(--spacing-md);
+}
+
+.help-card h3 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.help-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.help-card ol,
+.help-card ul {
+    margin-left: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.help-card li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.help-card a {
+    color: var(--accent-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-base);
+}
+
+.help-card a:hover {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+.help-card strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.disclaimer-card {
+    grid-column: 1 / -1;
+    background: rgba(245, 158, 11, 0.05);
+    border-color: var(--accent-warning);
+}
+
+.warning-text {
+    color: var(--accent-warning);
+    font-weight: 600;
+    margin-top: var(--spacing-md);
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .disclaimer-card {
+        grid-column: 1;
+    }
+}

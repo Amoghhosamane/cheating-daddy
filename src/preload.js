@@ -1,2 +1,6 @@
-// See the Electron documentation for details on how to use preload scripts:
-// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
+const { contextBridge, ipcRenderer } = require("electron");
+
+contextBridge.exposeInMainWorld("electronAPI", {
+    sendMessage: msg => ipcRenderer.send("message", msg),
+    onStatusUpdate: cb => ipcRenderer.on("update-status", (_, status) => cb(status)),
+});
